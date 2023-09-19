@@ -41,7 +41,7 @@ export default defineConfig({
   description: "Nanyi Blog",
   lang: "zh-CN",
 
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/blog/favicon.ico" }]],
   base: "/blog/",
   themeConfig: {
     nav: [
@@ -74,5 +74,9 @@ export default defineConfig({
       pattern: "https://github.com/nanyishixiong/blog/docs/:path"
     }
   },
-  lastUpdated: true
+  lastUpdated: true,
+  // 生成sitemap 用于提交给各个搜索引擎平台，方便根据 sitemap 抓取我们的页面。提高SSO
+  sitemap: {
+    hostname: "https://nanyishixiong.github.io/blog/"
+  }
 });

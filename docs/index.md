@@ -7,11 +7,12 @@ hero:
   tagline: 记录前端学习的笔记
   actions:
     - theme: brand
-      text: Get Started
-      link: /blog/react/start
-    - theme: alt
       text: View on GitHub
       link: https://github.com/nanyishixiong/blog
+feature:
+  - icon: 🛠️
+    title: Simple and minimal, always
+    details: Lorem ipsum...
 ---
 
 <style>
