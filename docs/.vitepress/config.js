@@ -3,25 +3,38 @@ import path from "path";
 import { defineConfig } from "vitepress";
 
 const rootDir = process.cwd();
-
+const excludeDir = [".vitepress", "public", "index.md"];
 function createSidebar() {
   const sidebar = {};
-  const basePath = path.resolve(rootDir, "docs/blog");
+  const basePath = path.resolve(rootDir, "docs");
   const dirs = fs.readdirSync(basePath);
-  sidebar["/blog/"] = dirs.map((dirName) => {
+  for (let i = 0; i < dirs.length; i++) {
+    const dirName = dirs[i];
+    if (excludeDir.includes(dirName)) continue;
     // 取到文件路径
     const filePath = path.resolve(basePath, dirName);
     // 读文件夹 拿到文件
     const files = fs.readdirSync(filePath);
     const items = files.map((file) => {
       file = file.split(".")[0]; // 去掉 .md
-      return { text: file, link: `/blog/${dirName}/${file}` };
+      return { text: file, link: `/${dirName}/${file}` };
     });
-    return { text: dirName, items };
-  });
+    sidebar[`/${dirName}/`] = [{ text: dirName, items }];
+  }
   return sidebar;
 }
 const sidebar = createSidebar();
+
+function createNav(sidebar) {
+  const nav = [];
+  Object.keys(sidebar).forEach((key) => {
+    nav.push({
+      text: sidebar[key][0].text,
+      link: sidebar[key][0].items[0].link
+    });
+  });
+  return nav;
+}
 
 export default defineConfig({
   title: "Nanyi Blog",
@@ -32,7 +45,8 @@ export default defineConfig({
   base: "/blog/",
   themeConfig: {
     nav: [
-      { text: "首页", link: "/" }
+      { text: "首页", link: "/" },
+      ...createNav(sidebar)
       // {
       //   text: "Nanyi",
       //   items: [
@@ -54,6 +68,11 @@ export default defineConfig({
     ],
     search: {
       provider: "local"
+    },
+    // edit this page
+    editLink: {
+      pattern: "https://github.com/nanyishixiong/blog/docs/:path"
     }
-  }
+  },
+  lastUpdated: true
 });

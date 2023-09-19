@@ -8,17 +8,10 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /blog/navigation/start
+      link: /blog/react/start
     - theme: alt
       text: View on GitHub
-      link: https://github.com/vuejs/vitepress
-features:
-  - icon: 📝
-    title: React
-    details: React Note
-  - icon: 🚀
-    title: Wait For Fill...
-    details: Wait For Fill...
+      link: https://github.com/nanyishixiong/blog
 ---
 
 <style>

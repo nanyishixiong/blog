@@ -1,3 +1,0 @@
-Start
-
-[React](../react/start)
