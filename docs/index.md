@@ -4,12 +4,18 @@ layout: home
 hero:
   name: Nanyi Blog
   text: 南一的博客
-  tagline: 记录前端学习的笔记
+  tagline: The Note About Front-End
   actions:
     - theme: brand
       text: View on GitHub
       link: https://github.com/nanyishixiong/blog
-feature:
+features:
+  - icon: 🛠️
+    title: Simple and minimal, always
+    details: Lorem ipsum...
+  - icon: 🛠️
+    title: Simple and minimal, always
+    details: Lorem ipsum...
   - icon: 🛠️
     title: Simple and minimal, always
     details: Lorem ipsum...

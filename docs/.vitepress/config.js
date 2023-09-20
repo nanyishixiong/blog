@@ -17,7 +17,7 @@ function createSidebar() {
     const files = fs.readdirSync(filePath);
     const items = files.map((file) => {
       file = file.split(".")[0]; // 去掉 .md
-      return { text: file, link: `/${dirName}/${file}` };
+      return { text: file, link: file === "index" ? `/${dirName}/` : `/${dirName}/${file}` };
     });
     sidebar[`/${dirName}/`] = [{ text: dirName, items }];
   }
@@ -74,9 +74,10 @@ export default defineConfig({
       pattern: "https://github.com/nanyishixiong/blog/docs/:path"
     }
   },
-  lastUpdated: true,
+  lastUpdated: true
   // 生成sitemap 用于提交给各个搜索引擎平台，方便根据 sitemap 抓取我们的页面。提高SSO
-  sitemap: {
-    hostname: "https://nanyishixiong.github.io/blog/"
-  }
+  // github 主域下太多网页百度注册不了
+  // sitemap: {
+  //   hostname: "https://nanyishixiong.github.io/blog/"
+  // }
 });
