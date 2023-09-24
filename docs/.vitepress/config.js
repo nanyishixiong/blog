@@ -15,10 +15,14 @@ function createSidebar() {
     const filePath = path.resolve(basePath, dirName);
     // 读文件夹 拿到文件
     const files = fs.readdirSync(filePath);
-    const items = files.map((file) => {
+    console.log(files);
+    const items = [];
+    for (let i = 0; i < files.length; i++) {
+      let file = files[i];
+      if (file === "image") continue;
       file = file.split(".")[0]; // 去掉 .md
-      return { text: file, link: file === "index" ? `/${dirName}/` : `/${dirName}/${file}` };
-    });
+      items.push({ text: file, link: file === "index" ? `/${dirName}/` : `/${dirName}/${file}` });
+    }
     sidebar[`/${dirName}/`] = [{ text: dirName, items }];
   }
   return sidebar;
