@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 
 const rootDir = process.cwd();
 const excludeDir = [".vitepress", "public", "index.md"];
+const excludeFile = ["image", "img"];
 function createSidebar() {
   const sidebar = {};
   const basePath = path.resolve(rootDir, "docs");
@@ -19,7 +20,8 @@ function createSidebar() {
     const items = [];
     for (let i = 0; i < files.length; i++) {
       let file = files[i];
-      if (file === "image") continue;
+      // 剔除文件夹 只留markdown文件
+      if (excludeFile.includes(file)) continue;
       file = file.split(".")[0]; // 去掉 .md
       items.push({ text: file, link: file === "index" ? `/${dirName}/` : `/${dirName}/${file}` });
     }
