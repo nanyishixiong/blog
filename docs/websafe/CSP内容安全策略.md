@@ -127,19 +127,19 @@ source-list 由一个以上的源表达式（source-expression）组成，使用
 
 | 指令                      | 说明                                          | Example                                                      |
 | ------------------------- | --------------------------------------------- | ------------------------------------------------------------ |
-| base-uri <sourc-list>     | 约束 `<base>` 元素能指定的 URL                |                                                              |
-| plugin-types <MIME types> |                                               | `plugin-types application/pdf;`                              |
-| sandbox <value>           | 含义和 `<iframe>` 元素的 sandbox 属性值相同。 | `allow-forms` 允许提交表单、`allow-modals` 允许模态弹窗（alert）等 |
+| base-uri `<sourc-list>`     | 约束 `<base>` 元素能指定的 URL                |                                                              |
+| plugin-types `<MIME types>` |                                               | `plugin-types application/pdf;`                              |
+| sandbox `<value>`           | 含义和 `<iframe>` 元素的 sandbox 属性值相同。 | `allow-forms` 允许提交表单、`allow-modals` 允许模态弹窗（alert）等 |
 
 #### Navigation directives
 
 用来控制导航行为的一类指令。
 
-| 指令                          | 说明                                                         | 备注                                                         |
-| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| form-action <source-list>     | 指定表单可提交的 URL                                         | 提交行为实际发生时才拦截                                     |
-| frame-ancestors <source-list> | “选爹”。可以通过 `<frame>` `<iframe>` `<object>` `<embed>` `<applet>` 被嵌入的页面 | `frame-ancestors 'none'` 效果等同于 `X-Frame-Options: DENY` 可以防止点击劫持（clickjacking）攻击 |
-| navigation-to <source-list>   | 所有类型的导航、跳转（a、form、window.location、window.open 等） | **非标准**                                                   |
+| 指令                            | 说明                                                         | 备注                                                         |
+| ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| form-action `<source-list>`     | 指定表单可提交的 URL                                         | 提交行为实际发生时才拦截                                     |
+| frame-ancestors `<source-list>` | “选爹”。可以通过 `<frame>` `<iframe>` `<object>` `<embed>` `<applet>` 被嵌入的页面 | `frame-ancestors 'none'` 效果等同于 `X-Frame-Options: DENY` 可以防止点击劫持（clickjacking）攻击 |
+| navigation-to `<source-list>`   | 所有类型的导航、跳转（a、form、window.location、window.open 等） | **非标准**                                                   |
 
 #### Reporting directives
 
@@ -179,7 +179,7 @@ Content-Type: application/csp-report
 
 ### HTTP 响应头
 
-```html
+```
 HTTP/1.1 200 OK
 ...
 Content-Security-Policy: default-src 'self'; script-src 'self' *.example.com; report-uri /_csp-report
