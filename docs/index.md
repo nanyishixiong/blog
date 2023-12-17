@@ -7,17 +7,20 @@ hero:
   tagline: The Note About Front-End
   actions:
     - theme: brand
+      text: Get Start
+      link: /Javascript/%E5%9F%BA%E7%A1%80.html
+    - theme: alt
       text: View on GitHub
       link: https://github.com/nanyishixiong/blog
 features:
-  - icon: 🛠️
-    title: Simple and minimal, always
+  - icon: 🍕
+    title: 前端安全
     details: Lorem ipsum...
-  - icon: 🛠️
-    title: Simple and minimal, always
+  - icon: 🍔
+    title: JavaScript 基础
     details: Lorem ipsum...
-  - icon: 🛠️
-    title: Simple and minimal, always
+  - icon: 🍭
+    title: Webpack
     details: Lorem ipsum...
 ---
 

@@ -6,7 +6,8 @@ const rootDir = process.cwd();
 const excludeDir = [".vitepress", "public", "index.md"];
 const excludeFile = ["image", "img"];
 function createSidebar() {
-  const sidebar = {};
+  const sidebar = [];
+
   const basePath = path.resolve(rootDir, "docs");
   const dirs = fs.readdirSync(basePath);
   for (let i = 0; i < dirs.length; i++) {
@@ -16,28 +17,31 @@ function createSidebar() {
     const filePath = path.resolve(basePath, dirName);
     // 读文件夹 拿到文件
     const files = fs.readdirSync(filePath);
-    console.log(files);
     const items = [];
     for (let i = 0; i < files.length; i++) {
       let file = files[i];
       // 剔除文件夹 只留markdown文件
       if (excludeFile.includes(file)) continue;
       file = file.split(".")[0]; // 去掉 .md
-      items.push({ text: file, link: file === "index" ? `/${dirName}/` : `/${dirName}/${file}` });
+      items.push({ text: file, link: file });
     }
-    sidebar[`/${dirName}/`] = [{ text: dirName, items }];
+    sidebar.push({
+      text: dirName,
+      base: `/${dirName}/`,
+      items
+    });
   }
+
   return sidebar;
 }
 const sidebar = createSidebar();
+console.dir(sidebar, { depth: null, colors: true });
 
 function createNav(sidebar) {
   const nav = [];
-  Object.keys(sidebar).forEach((key) => {
-    nav.push({
-      text: sidebar[key][0].text,
-      link: sidebar[key][0].items[0].link
-    });
+  nav.push({
+    text: "面试题",
+    link: "/Javascript/基础.html"
   });
   return nav;
 }
