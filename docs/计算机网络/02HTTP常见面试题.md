@@ -46,9 +46,9 @@
 
 *请求上下文*
 
-+ **Host：www.uuid.online/**       //请求的目标域名和端口号
-+ **Origin：http://localhost:8081**  // 请求的来源域名和端口号（跨域请求时，浏览器会自动带上这个头信息）
-+ **Referer：http://localhost:8081/link?query=xxxx** //请求资源的完整 URL
++ **Host：`www.uuid.online`**       //请求的目标域名和端口号
++ **Origin：`http://localhost:8081`**  // 请求的来源域名和端口号（跨域请求时，浏览器会自动带上这个头信息）
++ **Referer：`http://localhost:8081/link?query=xxxx`** //请求资源的完整 URL
 + **User-Agent：Mozilla/5.0(Window NT 10.0;Win64;x64) AppleWebKit/537.36(KHTML, like Gecko) Chrome/67.0.3396.99Safari/537.36** // 浏览器信息
 
 *内容协商*
