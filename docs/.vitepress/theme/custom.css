@@ -1,0 +1,7 @@
+strong {
+  color: var(--vp-c-indigo-1);
+}
+em {
+  color: #a862ea;
+  font-weight: 700;
+}

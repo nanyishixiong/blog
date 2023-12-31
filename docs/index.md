@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Get Start
-      link: /Javascript/%E5%9F%BA%E7%A1%80.html
+      link: /Javascript/基础.html
     - theme: alt
       text: View on GitHub
       link: https://github.com/nanyishixiong/blog
@@ -16,12 +16,18 @@ features:
   - icon: 🍕
     title: 前端安全
     details: Lorem ipsum...
+    link: /websafe/00总览.html
+    linkText: 查看文档
   - icon: 🍔
     title: JavaScript 基础
     details: Lorem ipsum...
+    link: /Javascript/基础.html
+    linkText: 查看文档
   - icon: 🍭
-    title: Webpack
+    title: 计算机网络
     details: Lorem ipsum...
+    link: /计算机网络/总览.html
+    linkText: 查看文档
 ---
 
 <style>

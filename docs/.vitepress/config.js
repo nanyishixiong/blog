@@ -28,7 +28,8 @@ function createSidebar() {
     sidebar.push({
       text: dirName,
       base: `/${dirName}/`,
-      items
+      items,
+      collapsed: false
     });
   }
 
@@ -66,6 +67,7 @@ export default defineConfig({
       // } //lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e08da34488b114bd4c665ba2fa520a31.svg
     ],
     sidebar,
+    outline: "deep",
     socialLinks: [
       { icon: "github", link: "https://github.com/nanyishixiong" },
       {
