@@ -8,9 +8,9 @@
 
 `1xx` 类状态码属于**提示信息**，是协议处理中的一种中间状态，实际用到的比较少。
 
-`2xx` 类状态码表示服务器**成功**处理了客户端的请求，也是我们最愿意看到的状态。
+- 「**101 Switchig Protocols**」该代码是响应客户端的 [`Upgrade` (en-US)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade) 请求头发送的，指明服务器即将切换的协议。例如建立websocket连接
 
-+ 「**101 Switchig Protocols**」该代码是响应客户端的 [`Upgrade` (en-US)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade) 请求头发送的，指明服务器即将切换的协议。例如建立websocket连接
+`2xx` 类状态码表示服务器**成功**处理了客户端的请求，也是我们最愿意看到的状态。
 
 - 「**200 OK**」是最常见的成功状态码，表示一切正常。如果是非 `HEAD` 请求，服务器返回的响应头都会有 body 数据。
 - 「**204 No Content**」也是常见的成功状态码，与 200 OK 基本相同，但响应头没有 body 数据。
@@ -37,7 +37,7 @@
 - 「**500 Internal Server Error**」与 400 类型，是个笼统通用的错误码，服务器发生了什么错误，我们并不知道。
 - 「**501 Not Implemented**」服务器不支持请求方法，因此无法处理。。
 - 「**502 Bad Gateway**」通常是服务器作为网关或代理时返回的错误码，表示服务器自身工作正常，访问后端服务器发生了错误。
-- 「**503 Service Unavailable**」表示服务器当前很忙，暂时无法响应客户端，类似“网络服务正忙，请稍后重试”的意思。
+- 「**503 Service Unavailable**」服务器尚未处于可以接受请求的状态。一般是停机或超载。
 - 「**504 Gateway Timeout**」当服务器充当网关且无法及时获得响应时，会给出此错误响应。
 
 ## 3、HTTP 常见字段

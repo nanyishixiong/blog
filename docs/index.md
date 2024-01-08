@@ -5,6 +5,9 @@ hero:
   name: Nanyi Blog
   text: 南一的博客
   tagline: The Note About Front-End
+  image:
+    src: /nanyi.png
+    alt: VitePress
   actions:
     - theme: brand
       text: Get Start
@@ -26,16 +29,16 @@ features:
   - icon: 🍭
     title: 计算机网络
     details: Lorem ipsum...
-    link: /计算机网络/总览.html
+    link: /计算机网络/00index.html
     linkText: 查看文档
 ---
 
 <style>
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #30a46c 30%, #47caff);
 
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #30a46c 50%, #47caff 50%);
   --vp-home-hero-image-filter: blur(40px);
 }
 
